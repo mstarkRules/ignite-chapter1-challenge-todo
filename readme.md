@@ -7,8 +7,8 @@
 </h1>
 
 <h2>🔗 Descrição</h2>
-<p align=>Aplicação que cria tarefas e permite marcar como feita</p>
-<p>É possível também apagar uma tarefa</p>
+<p align=>Aplicação que cria tarefas e permite marcá-las como feitas/desfeitas</p>
+<p>Também é possível apagar uma tarefa</p>
 
 <h2>✨ Layout do projeto</h2>
 <p align="center" >

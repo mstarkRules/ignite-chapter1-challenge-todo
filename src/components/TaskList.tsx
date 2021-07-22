@@ -30,7 +30,7 @@ export function TaskList() {
       let newTasks = [...tasks, newTask];
       setTasks(newTasks);
       setNewTaskTitle("");
-      setTaskCount(tasks.length + 1);
+      setTaskCount(taskCount + 1);
     } else {
       alert("Dgite um nome para a tarefa!");
     }
@@ -47,9 +47,7 @@ export function TaskList() {
     newTasks = newTasks.filter((t) => t.id != id);
     setTasks(newTasks);
 
-    //acho que aqui dá problema de closure, então subtraí 1 pra corrigir.
-    //deve ter formas melhores de se fazer isso
-    setTaskCount(tasks.length - 1);
+    setTaskCount(taskCount - 1);
   }
 
   return (
