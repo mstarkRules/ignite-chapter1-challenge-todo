@@ -2,7 +2,7 @@
 
 <h1 align='center'>    
     <div>
-    <img src="https://github.com/mstarkRules/ignite-chapter1-challenge-todo/blob/main/public/logo.svg" style="align-items: center; align-self: center;" alt="Letmeask logo">
+    <img src="https://github.com/mstarkRules/ignite-chapter1-challenge-todo/blob/main/public/logo.svg" style="align-items: center; align-self: center;" alt="todo logo">
 </div>
 </h1>
 
@@ -12,7 +12,7 @@
 
 <h2>✨ Layout do projeto</h2>
 <p align="center" >
-  <img alt="Podcastr" src="" width="100%" style="max-width:100%;"></a>
+  <img alt="todo" src="https://github.com/mstarkRules/ignite-chapter1-challenge-todo/blob/main/public/tela%20inicial%20challenger%201.png" width="100%" style="max-width:100%;"></a>
 </p>
 <p align='center'>
     Tela da Aplicação web
