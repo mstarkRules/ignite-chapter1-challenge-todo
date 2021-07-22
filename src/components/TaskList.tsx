@@ -13,13 +13,13 @@ interface Task {
 export function TaskList() {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState("");
+  const [taskCount, setTaskCount] = useState(0);
 
   function handleCreateNewTask() {
     let id =
       Math.floor(Math.random() * 100) *
       (tasks.length > 0 ? tasks.length : Math.floor(Math.random() * 100));
-    // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
-    // console.log(id);
+
     let newTask;
     if (newTaskTitle.length > 0) {
       newTask = {
@@ -29,23 +29,33 @@ export function TaskList() {
       };
       let newTasks = [...tasks, newTask];
       setTasks(newTasks);
+      setNewTaskTitle("");
+      setTaskCount(tasks.length + 1);
     } else {
       alert("Dgite um nome para a tarefa!");
     }
   }
 
   function handleToggleTaskCompletion(id: number) {
-    // Altere entre `true` ou `false` o campo `isComplete` de uma task com dado ID
+    let newTasks = [...tasks];
+    newTasks.map((t) => (t.id != id ? t : (t.isComplete = !t.isComplete)));
+    setTasks(newTasks);
   }
 
   function handleRemoveTask(id: number) {
-    // Remova uma task da listagem pelo ID
+    let newTasks = [...tasks];
+    newTasks = newTasks.filter((t) => t.id != id);
+    setTasks(newTasks);
+
+    //acho que aqui dá problema de closure, então subtraí 1 pra corrigir.
+    //deve ter formas melhores de se fazer isso
+    setTaskCount(tasks.length - 1);
   }
 
   return (
     <section className="task-list container">
       <header>
-        <h2>Minhas tasks</h2>
+        <h2>Minhas tasks: {taskCount}</h2>
 
         <div className="input-group">
           <input
@@ -57,7 +67,7 @@ export function TaskList() {
           <button
             type="submit"
             data-testid="add-task-button"
-            onClick={() => handleCreateNewTask()}
+            onClick={handleCreateNewTask}
           >
             <FiCheckSquare size={16} color="#fff" />
           </button>
